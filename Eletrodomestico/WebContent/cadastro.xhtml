@@ -1,0 +1,33 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+		<title>Eletrodomestico</title>
+	</h:head>
+	<h:body>
+		<h1>Cadastro de eletrodomestico</h1>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome" />
+				<h:inputText value="#{eletrodomesticoMB.eletrodomestico.nome}" />
+				
+				<h:outputLabel value="Marca" />
+				<h:inputText value="#{eletrodomesticoMB.eletrodomestico.marca}" />
+				
+				<h:outputLabel value="Cor" />
+				<h:inputText value="#{eletrodomesticoMB.eletrodomestico.cor}" />
+				
+				<h:commandButton action="#{eletrodomesticoMB.salvar(eletrodomesticoMB.eletrodomestico)}" value="Salvar" />
+				
+			</h:panelGrid>
+			<h:messages />
+		</h:form>
+ <h:form>
+			<h:commandLink action="/listagem" value="listagem" />
+		</h:form>   
+ 	</h:body>
+</html>
