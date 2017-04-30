@@ -12,6 +12,13 @@ public class Eletrodomestico {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
+	private String nome;
+	
+	private String marca;
+	
+	private String cor;
+	
 	public Long getId() {
 		return id;
 	}
@@ -36,8 +43,4 @@ public class Eletrodomestico {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
-	private String nome;
-	private String marca;
-	private String cor;
-
 }
