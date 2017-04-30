@@ -1,6 +1,7 @@
 package managebean;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -20,7 +21,7 @@ import util.JPAUtil;
 public class EletrodomesticoMB {
 	
 	private Eletrodomestico eletrodomestico = new Eletrodomestico();
-	private List<Eletrodomestico> eletrodomesticos = null;
+	private List<Eletrodomestico> eletrodomesticos = new ArrayList<>();
 
 	public void salvar(Eletrodomestico eletrodomestico){
 		EntityManager manager = JPAUtil.getEntityManager();
@@ -51,7 +52,7 @@ public class EletrodomesticoMB {
 
 	@SuppressWarnings("unchecked")
 	public List<Eletrodomestico> getEletrodomesticos() {
-		if(this.eletrodomesticos == null){
+		if(this.eletrodomesticos.isEmpty()){
 		EntityManager manager = JPAUtil.getEntityManager();
 		Query query =   manager.createQuery("select e From Eletrodomestico e",Eletrodomestico.class) ;
 		this.eletrodomesticos = query.getResultList() ;
@@ -70,7 +71,4 @@ public class EletrodomesticoMB {
 	public void setEletrodomestico(Eletrodomestico eletrodomestico) {
 		this.eletrodomestico = eletrodomestico;
 	}
-
-	
-
 }
